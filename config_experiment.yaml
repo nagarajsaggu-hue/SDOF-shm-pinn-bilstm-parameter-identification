@@ -1,0 +1,51 @@
+
+# Experiment BiLSTM Config
+
+#  Data & Paths
+data_folder: "./data"
+results_folder: "./results"
+models_folder: "./models"
+
+#  Model Names
+champion_model_name: "bilstm_regressor_MKzeta_best.keras"
+experiment_model_name: "bilstm_experiment.keras"
+
+#  Training setup
+epochs: 20
+batch_size: 32
+learning_rate: 0.001
+loss: "mse"
+optimizer: "adam"
+
+# Model architecture
+lstm_units: 64
+dense_units: 32
+dropout: 0.3
+num_layers: 1
+
+#  Sequence settings
+seq_len: 128
+stride: 1
+
+# Input & Target features
+input_features:
+  - "F"
+  - "u"
+  - "v"
+  - "a"
+
+target_features:
+  - "M"
+  - "K"
+  - "zeta"
+
+# Options
+auto_detect_features: true
+per_file_plots: true
+mc_dropout: true
+
+# Mode Control
+mode: "experiment"
+use_pretrained: false
+random_seed: 42
+

@@ -1,0 +1,52 @@
+
+# Champion BiLSTM Config
+
+
+#  Data & Paths
+data_folder: "./data"
+results_folder: "./results"
+models_folder: "./models"
+
+#  Model Names
+champion_model_name: "bilstm_regressor_MKzeta_best.keras"
+experiment_model_name: "bilstm_experiment.keras"
+
+#  Training setup
+epochs: 80
+batch_size: 32
+learning_rate: 0.0005
+loss: "mae"
+optimizer: "adam"
+
+#  Model architecture
+lstm_units: 128
+dense_units: 64
+dropout: 0.25
+num_layers: 2
+output_dim: 3
+
+# Sequence settings
+seq_len: 128
+stride: 32
+
+#  Input & Target features
+input_features:
+  - "F"
+  - "u"
+  - "v"
+  - "a"
+
+target_features:
+  - "M"
+  - "K"
+  - "zeta"
+
+#  Options
+auto_detect_features: true
+per_file_plots: true
+mc_dropout: true
+use_attention: false
+
+# Mode Control
+mode: "champion"
+use_pretrained: false
